@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -22,3 +23,5 @@ def contact_form(request):
         return JsonResponse({'message': 'Email sent successfully!'})
     return JsonResponse({'error': 'Invalid request'}, status=400)
 
+def home(request):
+    return HttpResponse("Hello from contact app!")
